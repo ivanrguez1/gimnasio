@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+  
+    <!--  -->
+	<record model="ir.ui.view" id="gimnasio_clase_form">
+      <field name="name">Clases</field>
+      <field name="model">gimnasio.clase</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"/>
+          <field name="inicio"/>
+          <field name="fin"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="act_clase">
+      <field name="name">Clases del Gimnasio</field>
+      <field name="res_model">gimnasio.clase</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="gimnasio.action_server">
+      <field name="name">gimnasio server</field>
+      <field name="model_id" ref="model_gimnasio_gimnasio"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+	<!-- Top menu item -->
+    <!--
+    <menuitem name="gimnasio" id="gimnasio.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="gimnasio.menu_1" parent="gimnasio.menu_root"/>
+    <menuitem name="Menu 2" id="gimnasio.menu_2" parent="gimnasio.menu_root"/>
+    -->
+    <!-- Top menu item -->
+    <menuitem name="gimnasio" id="gimnasio" action="act_clase"/>
+    <menuitem name="Clases" id="gimnasio_clases" parent="gimnasio" sequence="100"/>
+    
+    
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="gimnasio.menu_1_list" parent="gimnasio.menu_1"
+              action="gimnasio.action_window"/>
+    <menuitem name="Server to list" id="gimnasio" parent="gimnasio.menu_2"
+              action="gimnasio.action_server"/>
+    -->
+    
+    <menuitem name="Ver Clases" id="gimnasio_clases_verclases" parent="gimnasio_clases" sequence="100" action="act_clase"/>
+  </data>
+</odoo>
