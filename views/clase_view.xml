@@ -27,6 +27,7 @@
           <field name="capacidad"/>
           <field name="tipoActividad"/>
           <field name="usuario_ids"/>
+          <field name="profesor_id"/>
         </tree>
       </field>
     </record>
@@ -44,6 +45,7 @@
           				<field name="capacidad"/>
           				<field name="tipoActividad"/>
           				<field name="usuario_ids"/>
+          				<field name="profesor_id"/>
 					</group>
 				</form>
 			</field>

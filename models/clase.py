@@ -16,8 +16,11 @@ class clase(models.Model):
                                       ('relax','Relax'),],
                                      'Tipo de Actividad')
     
-    # OJO! El primer parámetro es el _name del otro modelo
+    # OJO! El primer parámetro es el _name del otro modelo (modelo, etiqueta)
     usuario_ids = fields.Many2many('gimnasio.usuario',string='Usuarios Confirmados')
+    
+    # Para el Many2one no hay que poner String (modelo, etiqueta)
+    profesor_id = fields.Many2one('gimnasio.profesor','Profesor')
 
 # class gimnasio(models.Model):
 #     _name = 'gimnasio.gimnasio'
