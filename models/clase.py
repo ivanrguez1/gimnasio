@@ -15,6 +15,10 @@ class clase(models.Model):
                                       ('anaerobic','Anaerobic'),
                                       ('relax','Relax'),],
                                      'Tipo de Actividad')
+    
+    # OJO! El primer parámetro es el _name del otro modelo
+    usuario_ids = fields.Many2many('gimnasio.usuario',string='Usuarios Confirmados')
+
 # class gimnasio(models.Model):
 #     _name = 'gimnasio.gimnasio'
 

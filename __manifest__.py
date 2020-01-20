@@ -26,6 +26,7 @@
         # 'security/ir.model.access.csv',
         # 'views/views.xml',
         'views/clase_view.xml',
+        'views/usuario_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

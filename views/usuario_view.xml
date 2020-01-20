@@ -1,0 +1,77 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="gimnasio_usuario_tree">
+      <field name="name">Usuario</field>
+      <field name="model">gimnasio.usuario</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"/>
+          <field name="idTarjeta"/>
+          <field name="foto"/>
+          <!-- El widget se pone igual que en el modelo, pero TODO en minúsculas -->
+          <field name="clase_ids" widget="many2many"/>
+        </tree>
+      </field>
+    </record>
+    
+    <record model="ir.ui.view" id="gimnasio_usuario_form">
+      <field name="name">Usuario</field>
+      <field name="model">gimnasio.usuario</field>
+      <field name="arch" type="xml">
+        <form string="Listado de Usuarios">
+        	<group string="Usuarios">
+        		<field name="nombre"/>
+          		<field name="idTarjeta"/>
+          		<field name="foto"/>
+          		<field name="clase_ids" widget="many2many"/>
+        	</group>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="act_usuario">
+      <field name="name">Usuario</field>
+      <field name="res_model">gimnasio.usuario</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="gimnasio.action_server">
+      <field name="name">gimnasio server</field>
+      <field name="model_id" ref="model_gimnasio_gimnasio"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="gimnasio" id="gimnasio.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <menuitem name="Usuarios" id="gimnasio_usuario" parent="gimnasio"/>
+    <!-- 
+    <menuitem name="Menu 2" id="gimnasio.menu_2" parent="gimnasio.menu_root"/>
+    -->
+    <!-- actions -->
+    
+    <menuitem name="Ver Usuarios" id="gimnasio_usuario_verusuarios" parent="gimnasio_usuario"
+              action="act_usuario" sequence="110"/>
+    <!--
+    <menuitem name="Server to list" id="gimnasio" parent="gimnasio.menu_2"
+              action="gimnasio.action_server"/>
+    -->
+  </data>
+</odoo>

@@ -26,6 +26,7 @@
           <field name="fin"/>
           <field name="capacidad"/>
           <field name="tipoActividad"/>
+          <field name="usuario_ids"/>
         </tree>
       </field>
     </record>
@@ -42,6 +43,7 @@
           				<field name="fin"/>
           				<field name="capacidad"/>
           				<field name="tipoActividad"/>
+          				<field name="usuario_ids"/>
 					</group>
 				</form>
 			</field>
