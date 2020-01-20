@@ -9,6 +9,12 @@ class clase(models.Model):
     nombre = fields.Char('Clase', size=64, required=True)
     inicio = fields.Datetime('Inicio', required=True, autodate=True)
     fin = fields.Datetime('Fin', required=True, autodate=True)
+    capacidad = fields.Integer("Capacidad")
+    tipoActividad = fields.Selection([('baile','Baile'),
+                                      ('aerobic','Aerobic'),
+                                      ('anaerobic','Anaerobic'),
+                                      ('relax','Relax'),],
+                                     'Tipo de Actividad')
 # class gimnasio(models.Model):
 #     _name = 'gimnasio.gimnasio'
 

@@ -2,8 +2,21 @@
 <odoo>
   <data>
   
-    <!--  -->
-	<record model="ir.ui.view" id="gimnasio_clase_form">
+  	<!-- 
+  	<record model="ir.ui.view" id="gimnasio.list">
+      <field name="name">gimnasio list</field>
+      <field name="model">gimnasio.gimnasio</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+  	-->
+    <!-- El modelo view (tree)-->
+	<record model="ir.ui.view" id="gimnasio_clase_tree">
       <field name="name">Clases</field>
       <field name="model">gimnasio.clase</field>
       <field name="arch" type="xml">
@@ -11,10 +24,28 @@
           <field name="nombre"/>
           <field name="inicio"/>
           <field name="fin"/>
+          <field name="capacidad"/>
+          <field name="tipoActividad"/>
         </tree>
       </field>
     </record>
-
+    
+    <!-- El modelo view (form)-->
+    <record model="ir.ui.view" id="gym_gymclass_form">
+			<field name="name">Clases</field>
+			<field name="model">gimnasio.clase</field>
+			<field name="arch" type="xml">
+				<form string="Form of gymclasses">
+					<group string="Classes">
+						<field name="nombre"/>
+          				<field name="inicio"/>
+          				<field name="fin"/>
+          				<field name="capacidad"/>
+          				<field name="tipoActividad"/>
+					</group>
+				</form>
+			</field>
+		</record>
 
     <!-- actions opening views on models -->
 
